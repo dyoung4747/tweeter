@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:wght@300;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
@@ -9,6 +13,8 @@
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -20,10 +26,38 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      
+      <span class="logo">tweeter</span>
+      <span class="newTweet">
+        <div><b>Write</b> a new tweet</div>
+        <div><i class="newTweet fas fa-angle-double-down" style="color:red"></i></div>
+      </span>
+      
+      
     </nav>
 
+    <header>
+      <div class="avatar">
+          <img src="/images/profile-hex.png" style="height:180px; width:180px"> 
+      </div>
+      <div class="name">
+          <h2>Douglas Young</h2>
+      </div>
+    </header>
+
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="container">
+      <p>This is some content...</p>
+      <div>
+        <h2>BUT THIS IS SOME REEEEAL CONTENT</h2>
+        <h5>A list:
+          <ul>
+            <li>Pork</li>
+            <li>Beans</li>
+            <li>Sauces</li>
+          </ul>
+        </h5>
+      </div>
+    </main>
   </body>
 </html>

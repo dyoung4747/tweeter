@@ -1,0 +1,25 @@
+header {
+  display: flex;
+  height: 400px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #00a5c2;
+  background-image: url("https://www.transparenttextures.com/patterns/ice-age.png");
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4056A1;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 180px;
+  width: 180px;
+}
