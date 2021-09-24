@@ -8,10 +8,8 @@ $(document).ready(function() {
     console.log('forms', $forms);
     // find id to change
     let $textCount = $forms.find("#counter");
-    console.log('text count', $textCount)
     // determine textarea input length
     let textLength = $formInput.val().length;
-    console.log('text length', textLength)
     // subtract text length from 140
     let charLeft = 140 - textLength;
     // display characters left on specified id (counter)

@@ -21,9 +21,6 @@
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
@@ -55,36 +52,26 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
+        <div class="error-message">
+          
+        </div>
+        <h2><i>Compose a Tweet...</i>
+        </h2>
         <form method="POST" action="/tweets" id="tweet-box">
           <!-- <label for="tweet-text">What are you humming about?</label> -->
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <div class="tweet-container">
-            <button type="submit">Tweet</button>
+            <button type="submit" id="submit-tweet">Tweet</button>
             <output name="counter" class="counter" for="tweet-text" id="counter">140</output>
           </div>
         </form>
+
       </section>
       <section class="all-tweets">
-        <article>
-          <header class="article-tweet-header">
-            <div class="avatar-name">
-              <img src="../public/images/profile-hex.png">
-              <h3>Newton</h3>
-            </div>
-            <h3 class="handle"><b>@SirIsaac</b></h3>
-          </header>
-          <p class="tweeted">If I have seen further it is by standing on the shoulders of giants</p>
-          <footer class="article-tweet-header">
-            <h5 class="date">10 days ago</h5>
-            <div class="icon-grouped">
-              <i class="icons fas fa-flag"></i>
-              <i class="icons fas fa-retweet"></i>
-              <i class="icons fas fa-heart"></i>
-            </div>
-          </footer>
-        </article>
       </section>
     </main>
+    <!-- App JS -->
+    <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </body>
 </html>

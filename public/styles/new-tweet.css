@@ -22,13 +22,20 @@ form {
 
 button {
   display: flex;
+  cursor: pointer;
   color: #FFFF;
   background-color: #4056A1;
   font-family: 'Bungee', cursive;
   font-size: 16px;
   border: none;
   align-items: center;
+}
 
+button:hover {background-color: #5a72c2}
+
+button:active {
+  background-color: #5a72c2;
+  transform: translateY(4px);
 }
 
 output {
@@ -49,4 +56,25 @@ textarea {
 output {
   font-size: 24px;
   color: black;
+}
+
+.error-message {
+  display: flex;
+  border: 2px dashed #5a72c2;
+  color: #d01a1a;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #a7b3dc;
+  resize: none;
+  outline: none;
+  height: 54px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  margin-top: 29px;
+}
+
+.error-message:empty {
+  grid-area: error-message;
+  display: none;
 }
