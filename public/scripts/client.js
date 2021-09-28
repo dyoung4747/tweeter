@@ -79,10 +79,10 @@ $(document).ready(function() {
         $('#counter').first().val(140);
         loadtweets();
       })
+
     };
 
     const errorHandler = function() {
-      console.log(tweetText)
       if (testText.length <= 0 || testText === null) {
         $(".error-message").text('❗️ Tweet does not contain any text. Tweets must be at least 1 character in length.').show();
         $('.error-message').hide().slideDown('slow');
@@ -105,6 +105,5 @@ $(document).ready(function() {
       error = false;
     }
   });
-  // loadtweets();
 
 });

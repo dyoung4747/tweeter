@@ -24,6 +24,5 @@ $(document).ready(function() {
     } else {
       $textCount.css('color', 'black');
     }
-  });
-    
+  }); 
 });
