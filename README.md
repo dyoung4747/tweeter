@@ -15,3 +15,12 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Screenshots
+
+!["Screenshot of desktop view"](https://github.com/dyoung4747/tweeter/blob/master/docs/desktop-view.png?raw=true)
+!["Screenshot of tablet view"](https://github.com/dyoung4747/tweeter/blob/master/docs/tablet-view.png?raw=true)
+!["Screenshot of inputted tweet text"](https://github.com/dyoung4747/tweeter/blob/master/docs/first-tweet.png?raw=true)
+!["Screenshot of error - text over 140 characters"](https://github.com/dyoung4747/tweeter/blob/master/docs/long-tweet.png?raw=true)
+!["Screenshot of error - no text"](https://github.com/dyoung4747/tweeter/blob/master/docs/no-text-tweet.png?raw=true)
+!["Screenshot of scrolled down"](https://github.com/dyoung4747/tweeter/blob/master/docs/scrolled-down.png?raw=true)
