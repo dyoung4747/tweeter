@@ -20,6 +20,8 @@ article:hover {
 }
 
 .tweeted {
+  display: flex;
+  flex-direction: column;
   border-bottom: 3px solid black;
   margin-bottom: 0px;
   padding-bottom: 30px;
@@ -28,6 +30,7 @@ article:hover {
   font-size: 0.65em;
   font-weight: bold;
   text-indent: 1em;
+  word-wrap: break-word;
 }
 
 .article-tweet-header {
@@ -36,7 +39,6 @@ article:hover {
   justify-content: space-between;
   align-items: flex-end;
   margin: 15px;
-  
 }
 
 .date {
@@ -75,4 +77,10 @@ font-size: 0.7em;
 .icons:hover {
   cursor: pointer;
   color:rgb(203, 148, 54)
+}
+
+@media only screen and (min-width: 768px) {
+  .all-tweets {
+    width: 100%;
+  }
 }

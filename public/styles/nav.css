@@ -27,3 +27,10 @@ nav {
   justify-content: center;
   margin-inline: 1.5em;
 }
+
+@media only screen and (min-width: 768px) {
+  nav {
+    top: 0%;
+    position: fixed;
+  }
+}

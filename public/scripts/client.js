@@ -43,35 +43,68 @@ const createTweetElement = function(tweet) {
 const errorHandler = function () {
 
 }
+
 $(document).ready(function() { 
 
-  $(".error-message").hide();
-  console.log("hey")
+  let error = false;
 
-  $( "#tweet-box" ).submit(function(event) {
-    event.preventDefault();
-    const tweetText = $( this ).serialize();
-    if (tweetText.length <= 5 || tweetText === null) {
-      $(".error-message").text('Tweet does not contain any text. Tweets must be at least 1 character in length.').show();
-    } else if (tweetText.length > 145) {
-      $(".error-message").text('Tweet exceeds 140 character limit.').show();
-    } else {
-      $.post('/tweets', tweetText);
-      $('#tweet-text').val('');
-      loadtweets();
-    }
-  });
+  $(".error-message").hide();
 
   const loadtweets = function() {
     $.get('/tweets')
     .then(function(data) {
       renderTweets(data);
     });
-  }
-  
+  };
+
+  loadtweets();
+
+  $( "#tweet-box" ).submit(function(event) {
+    event.preventDefault();
+
+    // Variable to check character count for errors
+    const testText = $( this ).find('#tweet-text').val();
+
+    // Data sent to database via serialze
+    const tweetText = $( this ).serialize();
+
+    const postTweet = function() {
+   
+      $.post('/tweets', tweetText)
+      .then(() => {
+        $('.all-tweets').empty();
+        $('#tweet-box').val('');
+        $('#tweet-text').val('');
+        $('.error-message').empty();
+        $('#counter').first().val(140);
+        loadtweets();
+      })
+    };
+
+    const errorHandler = function() {
+      console.log(tweetText)
+      if (testText.length <= 0 || testText === null) {
+        $(".error-message").text('❗️ Tweet does not contain any text. Tweets must be at least 1 character in length.').show();
+        $('.error-message').hide().slideDown('slow');
+        error = true;
+      } else if (testText.length > 140) {
+        $(".error-message").text('❗️ Tweet exceeds 140 character limit.').show();
+        $('.error-message').hide().slideDown('slow');
+        error = true;
+      } else {
+        postTweet(tweetText);
+        error = false;
+      }
+    };
+    errorHandler();
+  });
+
+  $('#tweet-box').on('keyup', (submitHandler) => {
+    if (error === true) {
+      $('.error-message').slideUp('slow');
+      error = false;
+    }
+  });
   // loadtweets();
 
 });
-    
-
-

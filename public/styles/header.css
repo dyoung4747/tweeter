@@ -26,3 +26,18 @@
   width: 180px;
   padding-top: 2px;
 }
+
+@media only screen and (min-width: 768px) {
+  .main-header {
+    display: flex;
+    justify-content: center;
+    align-self: flex-start;
+    width: 30%;
+    margin-top: 50px;
+    height: 260px;
+  }
+
+  .name {
+    font-size: 12px;
+  }
+}
