@@ -18,18 +18,19 @@ const escape = function (str) {
 };
 
 const createTweetElement = function(tweet) {
+  console.log(tweet.created_at)
   const $tweet = $(`
   <article>
           <header class="article-tweet-header">
             <div class="avatar-name">
-              <img src="${escape(tweet.user.avatars)}">
-              <h3>${escape(tweet.user.name)}</h3>
+              <img src="${(tweet.user.avatars)}">
+              <h3>${(tweet.user.name)}</h3>
             </div>
-            <h3 class="handle"><b>${escape(tweet.user.handle)}</b></h3>
+            <h3 class="handle"><b>${(tweet.user.handle)}</b></h3>
           </header>
           <p class="tweeted">${escape(tweet.content.text)}</p>
           <footer class="article-tweet-header">
-            <h5 class="date">${escape(tweet.created_at)}</h5>
+            <h5 class="date">${timeago.format(tweet.created_at + 590000)}</h5>
             <div class="icon-grouped">
               <i class="icons fas fa-flag"></i>
               <i class="icons fas fa-retweet"></i>
