@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
-  $("#tweet-text").on('input', function(event) {
-    // capture input in textarea 
+  $("#tweet-text").on('input', function() {
+    // capture input in textarea
     let $formInput = $(this);
     
     // find closest form tag
@@ -24,5 +24,5 @@ $(document).ready(function() {
     } else {
       $textCount.css('color', 'black');
     }
-  }); 
+  });
 });

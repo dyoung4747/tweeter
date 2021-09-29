@@ -35,35 +35,6 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
- nav {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  height: 120px;
-  color: #FFFF;
-  background-color: #4056A1;
-  font-size: 24px;
-  position: fixed;
-}
-
-.logo {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  margin-bottom: 0.75em;
-  align-items: flex-start;
-  font-family: 'Bungee', cursive;
-  font-size: 36px;
-  margin-inline: 1.5em;
-}
-
-.newTweet {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-inline: 1.5em;
-}
 
 @media only screen and (min-width: 768px) {
   body {

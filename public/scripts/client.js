@@ -7,18 +7,18 @@
 const renderTweets = function(tweets) {
   for (const tweet of tweets) {
     const $tweet = createTweetElement(tweet);
-    $('.all-tweets').append($tweet);  
+    $('.all-tweets').append($tweet);
   }
-}
+};
 
-const escape = function (str) {
+const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
 const createTweetElement = function(tweet) {
-  console.log(tweet.created_at)
+  console.log(tweet.created_at);
   const $tweet = $(`
   <article>
           <header class="article-tweet-header">
@@ -37,15 +37,15 @@ const createTweetElement = function(tweet) {
               <i class="icons fas fa-heart"></i>
             </div>
           </footer>
-        </article>`)
+        </article>`);
   return $tweet;
 };
 
-const errorHandler = function () {
+// const errorHandler = function () {
 
-}
+// }
 
-$(document).ready(function() { 
+$(document).ready(function() {
 
   let error = false;
 
@@ -53,33 +53,33 @@ $(document).ready(function() {
 
   const loadtweets = function() {
     $.get('/tweets')
-    .then(function(data) {
-      renderTweets(data);
-    });
+      .then(function(data) {
+        renderTweets(data);
+      });
   };
 
   loadtweets();
 
-  $( "#tweet-box" ).submit(function(event) {
+  $("#tweet-box").submit(function(event) {
     event.preventDefault();
 
     // Variable to check character count for errors
-    const testText = $( this ).find('#tweet-text').val();
+    const testText = $(this).find('#tweet-text').val();
 
     // Data sent to database via serialze
-    const tweetText = $( this ).serialize();
+    const tweetText = $(this).serialize();
 
     const postTweet = function() {
    
       $.post('/tweets', tweetText)
-      .then(() => {
-        $('.all-tweets').empty();
-        $('#tweet-box').val('');
-        $('#tweet-text').val('');
-        $('.error-message').empty();
-        $('#counter').first().val(140);
-        loadtweets();
-      })
+        .then(() => {
+          $('.all-tweets').empty();
+          $('#tweet-box').val('');
+          $('#tweet-text').val('');
+          $('.error-message').empty();
+          $('#counter').first().val(140);
+          loadtweets();
+        });
 
     };
 
@@ -100,7 +100,7 @@ $(document).ready(function() {
     errorHandler();
   });
 
-  $('#tweet-box').on('keyup', (submitHandler) => {
+  $('#tweet-box').on('keyup', () => {
     if (error === true) {
       $('.error-message').slideUp('slow');
       error = false;
